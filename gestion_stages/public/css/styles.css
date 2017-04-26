@@ -1,0 +1,752 @@
+
+/** HEADER **/
+
+div#resume {
+	background-color: #19253D;
+	width: 860px;
+	height: 150px;
+	display: block;
+	float: left;
+	color: white;
+}
+
+div#resume0 {
+	width: 185px;
+	height: 150px;
+	display: block;
+	padding-left: 25px;
+	float: left;
+}
+div#resume1 {
+
+	width: 300px;
+	height: 150px;
+	display: block;
+	float: left;
+}
+div#resume2 {
+	width: 290px;
+	height: 150px;
+	display: block;
+	float: left;
+}
+.banner
+{
+	margin-left: 5%;
+	height: 150px;
+	background-color: #19253D;
+	padding: 1%;
+	width: 1400px;
+}
+
+.banner_items
+{
+	padding:1%;
+}
+
+.logo
+{
+	padding:1%;
+	float: left;
+	height: 100px;
+	width: 50px;
+	display: block;
+}
+
+.nav
+{
+	height: 100px;
+	float: left;
+	width: 800px;
+	margin: 0-auto;
+	display: block;
+	padding: 1%;
+	background-color: #19253D;
+}
+
+.txt
+{
+	margin: 0-auto;
+	padding: 1%;
+	height: 40px;
+	font-size: 30px;
+	background-color: #19253D;
+}
+
+.banner_title
+{
+	color: white;
+}
+
+.nav_bar
+{
+	background-color: #19253D;
+}
+
+.menu
+{
+	background-color: #19253D;
+	width: 550px;
+	float: left;
+	padding: 1%;
+}
+
+.user
+{
+	background-color: #19253D;
+	width: 200px;
+	float: right;
+	padding: 1%;
+}
+
+.main_menu
+{
+	padding: 0; margin: 0;
+	text-align:left;
+}
+
+.main_menu li
+{
+	display: inline;
+	padding : 0 0.5em; 
+}
+
+.user_menu
+{
+	padding: 0; margin: 0;
+	text-align:right;
+}
+
+.user_menu li
+{
+	display: inline;
+}
+
+a:link
+{
+	text-decoration: none;
+}
+
+a
+{
+	color: white;
+}
+
+a:hover
+{
+	color: #ff9c23;
+}
+
+/** LEFT MENU**/
+
+#menu-accordeon {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 180px;
+}
+#menu-accordeon ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+#menu-accordeon li {
+   background-color:#19253D;
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #19253D
+}
+#menu-accordeon li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #444;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+#menu-accordeon a {
+  display:block;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 0;
+  font-family: verdana;
+  font-size:1.2em
+}
+#menu-accordeon ul li a, #menu-accordeon li:hover li a {
+  font-size:1em
+}
+#menu-accordeon li:hover {
+   background: #ff9c23
+}
+#menu-accordeon li li:hover {
+   background: #ff9c23;
+}
+#menu-accordeon ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+#menu-accordeon li:hover li {
+  max-height: 15em;
+}
+
+
+
+/** BODY **/
+
+/** Accueil **/
+
+.main
+{
+	margin-left: 5%;
+	min-height: 600px;
+}
+
+body {
+	margin: 0px;
+	background-color: #E3E3E3;
+}
+
+
+/** Stage **/
+
+.container_stage
+{
+	padding-top: 1%;
+	width: 1450px;
+	height: 1450px;
+	margin-left: 5%;
+}
+
+.box_menu_accordeon
+{
+	width: 200px;
+	min-height: 1000px;
+	float: left;
+}
+
+.contenue_stage_acc
+{
+	width: 1239.57px;
+	height: 1450px;
+	float: right;
+}
+
+.titre_principal
+{
+	float: left;
+	width: 1000px;
+	font-size: 250%;
+	height: 70px;
+	display: block;
+}
+
+
+
+.btn_ajout
+{
+	float: right;
+	width: 300px;
+	height: 50px;
+	display: block;
+	text-align: center;
+	padding-top: 1%;
+}
+
+.page_select
+{
+	height: 20px;
+	width: 1200px;
+	margin-left: 475px;
+	float: left;
+
+}
+
+.page_selector
+{
+	padding: 0; margin: 0;
+	text-align:left;
+}
+
+.page_selector li
+{
+	display: inline;
+	padding : 0 0.5em; 
+}
+
+.page_selector a
+{
+	color: black;
+}
+
+.page_selector a:hover
+{
+	color: #ff9c23 ;
+}
+
+.visites
+{
+	float: left;
+}
+
+.titre_secondaire_visite
+{
+	width: 700px;
+	float: left;
+	font-size: 200%;
+	height: 57px;
+	display: block;
+}
+
+.ajout_visite
+{
+	float: left;
+	width: 700px;
+	height: 300px;
+}
+
+.label_visite_form
+{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: left;
+}
+
+.input_visite_form
+{
+  display: inline-block;
+  float: left;
+}
+
+.input_visite_form_observation
+{
+  display: inline-block;
+  float: left;
+  height: 100px;
+  width: 200px;
+}
+
+.submit
+{
+	padding-left: 198px;
+}
+
+.form_stage
+{
+	width: 1000px;
+	float: left;
+	height: 500px;
+}
+
+/** SCOLARITE **/
+
+
+.contenue_suivi_scolaire
+{
+	width: 460px;
+	min-height: 500px;
+	float: left;
+	
+}
+
+.contenue_suivi_scolaire_2
+{
+	float: right;
+}
+
+.titre_principal
+{
+	float: left;
+	width: 700px;
+	font-size: 250%;
+	height: 70px;
+	display: block;
+}
+
+div#liste_annees
+{
+	float: left;
+	width: 350px;
+	height: 250px;
+}
+
+div#ajouter_annees
+{
+	float: right;
+	width: 265px;
+	height: 190px;
+	border-left: solid black 1px;
+	padding-left: 10px;
+}
+
+div#titre_principal_classe
+{
+	float: left;
+	width: 420px;
+	font-size: 250%;
+	height: 70px;
+}
+
+.titre_secondaire
+{
+	float: left;
+	width: 1000px;
+	font-size: 200%;
+	height: 57px;
+	display: block;
+}
+
+div#titre_secondaire_classe
+{
+	float: left;
+	width: 420px;
+	font-size: 200%;
+	height: 57px;
+	display: block;
+}
+
+div#titre_secondaire_annee
+{
+	float: left;
+	width: 700px;
+	font-size: 200%;
+	height: 57px;
+	display: block;
+}
+
+.btn_ajout
+{
+	float: right;
+	width: 270px;
+	height: 50px;
+	display: block;
+	text-align: center;
+	padding-top: 1%;
+}
+
+.page_select
+{
+	height: 20px;
+	float: right;
+	width: 300px;
+
+}
+
+.page_selector
+{
+	padding: 0; margin: 0;
+	text-align:left;
+}
+
+.page_selector li
+{
+	display: inline;
+	padding : 0 0.5em; 
+}
+
+.page_selector a
+{
+	color: black;
+}
+
+.page_selector a:hover
+{
+	color: #ff9c23 ;
+}
+
+.visites
+{
+	float: left;
+}
+
+.titre_secondaire_visite
+{
+	width: 700px;
+	float: left;
+	font-size: 200%;
+	height: 57px;
+	display: block;
+}
+
+.ajout_visite
+{
+	float: left;
+	width: 700px;
+	height: 300px;
+}
+
+.label_visite_form
+{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: left;
+}
+
+div#form_mini
+{
+	float: left;
+}
+
+.form_mini_label_left
+{
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.form_mini_label_right
+{
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.input_visite_form
+{
+  display: inline-block;
+  float: left;
+}
+
+.input_visite_form_observation
+{
+  display: inline-block;
+  float: left;
+  height: 100px;
+  width: 200px;
+}
+
+.submit
+{
+	padding-left: 198px;
+}
+
+.right_content_eleve
+{
+	width: 500px;
+	float: left;
+	padding-left: 20px;
+}
+
+.left_content_eleve
+{
+	width: 400px;
+	float: left;
+}
+
+.label_eleve_form
+{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: left;
+}
+
+.form_eleve
+{
+	width: 1239.57px;
+	float: left;
+}
+
+.titre_principal_type_bac
+{
+	float: left;
+	width: 1000px;
+	font-size: 250%;
+	height: 70px;
+	display: block;
+}
+
+/** ENTREPRISES **/
+
+.content
+{
+	width: 1200px;
+	height: 500px;
+	float: left;
+	display: block;
+}
+
+.left_content
+{
+	width: 600px;
+	height: 400px;
+	float: left;
+}
+
+.left_content_entreprise
+{
+	width: 400px;
+	height: 400px;
+	float: left;
+}
+
+
+.right_content
+{
+	width: 500px;
+	height: 400px;
+	float: left;
+	border-left: solid black 1px;
+	padding-left: 20px;
+}
+
+.titre_tertiaire
+{
+	float: left;
+	width: 350px;
+	font-size: 150%;
+	height: 57px;
+	display: block;
+}
+
+form
+{
+	float: left;
+}
+
+.form_entreprise_update
+{
+	width: 1239.57px;
+	height: 350px;
+	float: left;
+}
+
+.input_adresse
+{
+  display: inline-block;
+  float: left;
+  height: 100px;
+  width: 200px;
+}
+
+.left_content_entreprise
+{
+	width: 400px;
+	height: 350px;
+	float: left;
+}
+
+.right_content_entreprise
+{
+	width: 400px;
+	height: 350px;
+	float: right;
+}
+
+.label_nouveau
+{
+	display: inline-block;
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: left;
+}
+
+
+
+/** TABLEAU STAGE **/
+
+.lien_tableau
+{
+	color: black;
+}
+
+.tableau_histo_stage
+{
+	height: 150px;
+	float:left;               
+}
+
+/** FOOTER **/
+
+.footer_banner
+{
+	margin-left: 5%;
+	height: 150px;
+	background-color: #19253D;
+	padding: 1%;
+	width: 1400px;
+}
+
+.footer_banner_title
+{
+	color: white;
+}
+
+.footer_banner_items
+{
+	padding:1%;
+}
+
+.footer_nav
+{
+	height: 100px;
+	float: left;
+	width: 800px;
+	margin: 0-auto;
+	display: block;
+	padding: 1%;
+	background-color: #19253D;
+}
+
+.footer_txt
+{
+	margin: 0-auto;
+	padding: 1%;
+	height: 40px;
+	font-size: 30px;
+	background-color: #19253D;
+}
+
+.footer_menu
+{
+	background-color: #19253D;
+	width: 550px;
+	float: left;
+	padding: 1%;
+}
+
+.bahut
+{
+	background-color: #19253D;
+	width: 200px;
+	float: right;
+	padding: 1%;
+}
+
+.footer_main_menu
+{
+	padding: 0; margin: 0;
+	text-align:left;
+}
+
+.footer_main_menu li
+{
+	display: inline;
+	padding : 0 0.5em; 
+}
+
+.link_bahut
+{
+	padding: 0; margin: 0;
+	text-align:right;
+}
+
+.link_bahut li
+{
+	display: inline;
+}
+
+.footer_nav_bar
+{
+	background-color: #19253D;
+}
+
