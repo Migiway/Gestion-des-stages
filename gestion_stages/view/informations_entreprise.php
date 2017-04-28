@@ -5,19 +5,25 @@
 	</div>
 	<div class="contenue_stage_acc">
 		<div class="titre_principal">
-			<?php $nom_entreprise_original = $_GET['entreprise'];
-			 echo($nom_entreprise_original); ?>
+			<?php $nom_entreprise = $_GET['entreprise'];
+			 echo($nom_entreprise); ?>
 		</div>
+		<?php $query0 = $con->prepare('SELECT Id_entreprise FROM entreprise WHERE Nom_entreprise = "'.$nom_entreprise.'"');
+				$query0->execute();
+				$results = $query0->fetch();
+				$id_entreprise = $results['Id_entreprise']; ?>
 		<br>
 		<br>
 		<br>
-		<p class="tamer">
-			Cette société totalise <?php $query00 = $con->prepare('SELECT nb_stages_entreprise FROM entreprise WHERE Nom_entreprise = "'.$nom_entreprise_original.'"');
+		<p>
+			Cette société totalise <?php $query00 = $con->prepare('SELECT nb_stages_entreprise FROM entreprise WHERE Nom_entreprise = "'.$nom_entreprise.'"');
 				$query00->execute();
 				$results = $query00->fetch();
 				$nb_stage = $results['nb_stages_entreprise'];
 				echo $nb_stage;
-			?> stages à son actif.
+				/* SELECT Id_entreprise FROM `entreprise` WHERE Nom_entreprise = "'.$Nom_entreprise.'"
+				SELECT COUNT(Id_entreprise)as nb_stage FROM `stage` WHERE Id_entreprise = "'.$id_entreprise.'" */
+			?> stages à son actif. 
 			
 		</p>
 		<br>
@@ -27,15 +33,16 @@
 		</div>
 		<div class="form_entreprise_update">
 			<form method="post" action="traitement_informations_entreprise.php">
+				<input type="hidden" name="id_entreprise" value="<?php echo $id_entreprise ?>">
 				<div class="left_content_entreprise">
-					<input type="hidden" name="nom_originale" value="<?php echo $nom_entreprise_original?>">
-					<?php $query01 = $con->prepare('SELECT chiffre_affaires,adresse_entreprise,telephone_entreprise,type_entreprise FROM entreprise WHERE Nom_entreprise = "'.$nom_entreprise.'"');
+					<?php $query01 = $con->prepare('SELECT chiffre_affaires,adresse_entreprise,telephone_entreprise,type_entreprise,Nom_ref_pro FROM entreprise WHERE Nom_entreprise = "'.$nom_entreprise.'"');
 						$query01->execute();
 						$results = $query01->fetch();
 						$ca_entreprise = $results['chiffre_affaires'];
 						$addr_entreprise = $results['adresse_entreprise'];
 						$tel_entreprise = $results['telephone_entreprise'];
 						$type_entreprise = $results['type_entreprise'];
+						$resp_technique = $results['Nom_ref_pro'];
 					?>
 					<label class="label_visite_form">Non de l'entreprise :</label>
 					<input type="text" name="nom_entreprise" class="input_visite_form" value="<?php echo $nom_entreprise ?>">
@@ -47,6 +54,7 @@
 					?>
 					<label class="label_visite_form">Type d'entreprise :</label>
 					<select name="type_entreprise">
+						<option value="">Autre</option>
 						<?php while ( $results = $query->fetch()){ ?>
 						<option value="<?php echo ($results['type_entreprise']); ?>" >
 							<?php echo($results ['type_entreprise']); ?>
@@ -67,16 +75,14 @@
 					<input type="text" name="tel_entreprise" class="input_visite_form" value="<?php echo $tel_entreprise?>">
 					<br>
 					<br>
-					<?php
-						$query = $con->prepare('SELECT resp_technique FROM entreprise');
-						$query->execute();
-					?>
 					<label class="label_visite_form">Resp. technique :</label>
+					<?php $query01 = $con->prepare('SELECT Nom_referent_pro FROM referent_professionnel');
+						$query01->execute(); ?>
 					<select name="resp_technique">
-					<option><?php echo $resp_technique ?></option>
-						<?php while ( $results = $query->fetch()){ ?>
-						<option value="<?php echo ($results['resp_technique']); ?>" >
-							<?php echo($results ['resp_technique']); ?>
+						<option value=''>Autre</option>
+						<?php while ( $results = $query01->fetch()){ ?>
+						<option value="<?php echo ($results['Nom_referent_pro']); ?>" >
+							<?php echo ($results['Nom_referent_pro']); ?>
 							<?php } $query->closeCursor(); ?>
 						</option> 
 					</select>

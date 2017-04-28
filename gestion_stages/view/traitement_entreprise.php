@@ -19,10 +19,10 @@ if ( isset($nom_entreprise) && isset($ca_entreprise) && isset($adresse_entrepris
 
 	$requete1= $con->query('INSERT INTO entreprise (Nom_entreprise,chiffre_affaires,adresse_entreprise)
  	VALUES ("'.$nom_entreprise.'", "'.$ca_entreprise.'", "'.$adresse_entreprise.'")');
-	echo '<meta http-equiv="refresh" content="0;URL=informations_entrprise.php">';
+	echo '<meta http-equiv="refresh" content="0;URL=entreprises.php">';
 }
 else
 {
 	echo '<body onLoad="alert(\'Le formulaire est incorrect, veuillez recommencer ! \')">';
-	echo '<meta http-equiv="refresh" content="0;URL=entreprise.php">';
+	echo '<meta http-equiv="refresh" content="0;URL=entreprises.php">';
 }
