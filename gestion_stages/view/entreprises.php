@@ -37,7 +37,7 @@
 				Nouvelle entreprise
 				</div>
 				<form method="post" action="traitement_entreprise.php">
-				<label class="label_visite_form">Non de l'entreprise :</label>
+				<label class="label_visite_form">Nom de l'entreprise :</label>
 				<input type="text" name="nom_entreprise" class="input_visite_form">
 				<br>
 				<br>

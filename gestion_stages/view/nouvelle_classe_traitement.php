@@ -9,14 +9,10 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 $designation = $_POST['designation'];
 $classe = $_POST['nom_classe'];
 
-var_dump($classe);
-var_dump($designation);
-
-
 if(isset($classe) && isset($designation) ) {
 	$requete0= $con->query('INSERT INTO classe (Nom_classe,designation_classe)
  VALUES ("'.$classe.'", "'.$designation.'")');
-	echo '<body onLoad="alert(\'Nice\')">';
+	echo '<body onLoad="alert(\'La nouvelle classe à bien été ajoutée !\')">';
 	echo '<meta http-equiv="refresh" content="0;URL=suivi_scolarite.php">';
 }
 else {

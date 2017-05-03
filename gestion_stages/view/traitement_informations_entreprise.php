@@ -17,17 +17,6 @@ $nouveau_type_entreprise = $_POST['nouveau_type_entreprise'];
 $nouveau_resp_tech = $_POST['nouveau_resp_tech'];
 $Id_entreprise = $_POST['id_entreprise'];
 
-var_dump($nom_entreprise);
-var_dump($type_entreprise);
-var_dump($ca_entreprise);
-var_dump($adresse_entreprise);
-var_dump($tel_entreprise);
-var_dump($resp_technique);
-var_dump($nouveau_type_entreprise);
-var_dump($nouveau_resp_tech);
-var_dump($Id_entreprise);
-
-
 
 
 if ( empty($type_entreprise))

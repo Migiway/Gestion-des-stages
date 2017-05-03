@@ -33,15 +33,14 @@ if(isset($nom) && isset($telephone) && isset($adresse)&& isset($prenom) && isset
 	var_dump($type_bac);
 
 
-	$requete1= $con->query('UPDATE etudiant SET Nom_etudiant= "'.$nom.'", Prenom_etudiant= "'.$prenom.'", annee_obtention_bac= "'.$annee_obtention_bac.'", adresse_etudiant = "'.$adresse.'", email_etudiant= "'.$email.'", telephone_etudiant='.$telephone.', Id_bac= '.$type_bac.' WHERE Id_etudiant = '.$Id_nom.'');
-	/* sur la condition where je dois creer un variable d'une requette demandant son id avant mise a jour a cas ou elle changerait le nom - a faire dans eleve*/
+	$requete1= $con->query('UPDATE etudiant SET Nom_etudiant= "'.$nom.'", Prenom_etudiant= "'.$prenom.'", annee_obtention_bac= "'.$annee_obtention_bac.'", adresse_etudiant = "'.$adresse.'", email_etudiant= "'.$email.'", telephone_etudiant="'.$telephone.'", Id_bac= '.$type_bac.' WHERE Id_etudiant = '.$Id_nom.'');
 
 	echo '<body onLoad="alert(\'Nice\')">';
-	/*echo '<meta http-equiv="refresh" content="0;URL=suivi_scolarite.php">'; */
+	echo '<meta http-equiv="refresh" content="0;URL=suivi_scolarite.php">'; 
 }
 else {
 	echo '<body onLoad="alert(\'Erreur\')">';
-	echo '<meta http-equiv="refresh" content="0;URL=nouvelle_classe_eleve.php">';
+	echo '<meta http-equiv="refresh" content="0;URL=suivi_scolarite.php">'; 
 } 
 ?>
 

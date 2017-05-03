@@ -9,14 +9,9 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 $classe = $_POST['classe'];
 $annee = $_POST['Annee'];
 $new = $_POST['new'];
-
-var_dump($classe);
-var_dump($annee);
-var_dump($new);
 $requete=$con->query('SELECT Id_classe from classe where Nom_classe = "'.$classe.'"');
 $donnees=$requete->fetch();
 $Id_classe = $donnees['Id_classe'];
-var_dump($Id_classe);
 
 
 if(empty($new) && isset($annee)) {
@@ -34,7 +29,7 @@ elseif (empty($annee)&&isset($new)) {
 	$requete4= $con->query('INSERT INTO appartient (Id_classe,Id_annee)
  VALUES ("'.$Id_classe.'", "'.$new.'")');
 
-	echo '<body onLoad="alert(\'Nice\')">';
+	echo '<body onLoad="alert(\'Modification éffectuée avec succès !\')">';
 	echo '<meta http-equiv="refresh" content="0;URL=suivi_scolarite.php">';
 
 }

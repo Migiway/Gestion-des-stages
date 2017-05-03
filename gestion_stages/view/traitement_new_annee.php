@@ -9,14 +9,9 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 $classe = $_POST['classe'];
 $annee = $_POST['Annee'];
 $new = $_POST['new'];
-
-var_dump($classe);
-var_dump($annee);
-var_dump($new);
 $requete=$con->query('SELECT Id_classe from classe where Nom_classe = "'.$classe.'"');
 $donnees=$requete->fetch();
 $Id_classe = $donnees['Id_classe'];
-var_dump($Id_classe);
 
 
 if(empty($new) && isset($annee)) {
@@ -40,11 +35,5 @@ else {
 	echo '<meta http-equiv="refresh" content="0;URL=classe_nouvelle_annee.php">';
 }
 
-/*
-$requete2= $con->query('INSERT INTO annee (Id_annee,Annee)
- VALUES ("'.$annee.'", "'.$annee.'")')
 
-$requete3= $con->query('INSERT INTO appartient (Id_classe,Id_annee)
- VALUES ("'.$Id_classe.'", "'.$annee.'")')
-*/
 ?>

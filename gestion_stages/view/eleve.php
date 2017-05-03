@@ -53,7 +53,7 @@ var_dump($etudiant)
 						$donnees0=$requete0->fetch();
 						$telephone_etudiant=$donnees0['telephone_etudiant'];?>
 					<label class="label_eleve_form">Téléphone :</label>
-					<input type="number" name="telephone" class="input_eleve_form" value="<?php echo $telephone_etudiant ?>">
+					<input type="text" name="telephone" class="input_eleve_form" value="<?php echo $telephone_etudiant ?>">
 					<br>
 					<br>
 					<?php 
@@ -141,11 +141,12 @@ var_dump($etudiant)
 					<TH>Classe</TH>
 					<TH>Action</TH>
 				</TR>
-				<?php  while($donnees=$requete->fetch()) { ?>
+				<?php  while($donnees=$requete->fetch()) { 
+				$classe=$donnees['Nom_classe']; ?>
 				<TR>
 					<TD><?php echo($donnees['Id_annee']); ?></TD>
 				   	<TD><?php echo($donnees['Nom_classe']); ?></TD>
-				    <TH><a href="#" class="lien_tableau">Voir les stages</a></TH>
+				    <TH><?php echo '<a href="ensemble_stages.php?etudiant='.$etudiant.'&classe='.$classe.'" class="lien_tableau">Voir les stages</a>'; ?></TH>
 				</TR>
 				<?php } ?>
 			</TABLE>

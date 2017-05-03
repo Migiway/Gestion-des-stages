@@ -7,16 +7,15 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 	die($e);
 }
 $annee=$_GET['submit'];
-var_dump($annee);
 
 
 
 if(isset($annee)) { 
 
-	$requete1= $con->query('DELETE FROM annee where Annee = "'.$annee.'"');
+	$requete1= $con->query('DELETE FROM annee where Annee = '.$annee.'');
 
-	echo '<body onLoad="alert(\'Nice\')">';
-	echo '<meta http-equiv="refresh" content="0;URL=annees_scolaires.php">';
+	echo '<body onLoad="alert(\'L\'année à bien été supprimée !\')">';
+	echo '<meta http-equiv="refresh" content="0;URL=annees_scolaires.php">'; 
 }
 else {
 	echo '<body onLoad="alert(\'Erreur\')">';

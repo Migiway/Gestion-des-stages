@@ -12,7 +12,7 @@
 		</div>
 			<?php 
 			$requete= $con->query( 'SELECT * FROM classe ORDER BY Nom_classe ASC ' ); ?>
-			<form method="get" action="ensemble_stages.php" class="form_eleve">
+			<form method="post" action="traitement_stage.php" class="form_eleve">
 				<p>
 					<label class="label_visite_form">Classe :</label>
 				       <select id="classe" name="classe">
@@ -25,19 +25,19 @@
 			    </p>
 			    <p>
 			    	<?php 
-			$requete= $con->query( 'SELECT Nom_etudiant FROM etudiant ORDER BY Nom_etudiant ASC ' );?>
+			$requete= $con->query( 'SELECT Nom_etudiant, Prenom_etudiant FROM etudiant ORDER BY Nom_etudiant ASC ' );?>
 					<label class="label_visite_form">Elève :</label>
 				       <select id="etudiant" name="etudiant">
 				       <?php  while($donnees2=$requete->fetch()) { ?>
 				           <option value="<?php echo ($donnees2['Nom_etudiant']); ?>">
 
-				           <?php echo($donnees2['Nom_etudiant']); ?>
+				           <?php echo($donnees2['Nom_etudiant']); 
+				            ?>
 				           	
 				           </option> <?php } ?>
 
 				       </select>
 			    </p>
-			    <br>
 			    <p>
 			    	<div class="submit"><input type="submit" name="ensemble_stages" value="Rechercher"></div>
 			    </p>

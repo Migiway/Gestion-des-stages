@@ -1,3 +1,17 @@
+<?php
+if(isset($_GET['etudiant'])&&(isset($_GET['classe']))) 
+{
+	$nom = $_GET['etudiant'];
+    $classe = $_GET['classe'];
+}
+else 
+{
+	session_start();
+	$nom = $_SESSION["nom_etudiant"];
+	$classe = $_SESSION["classe_etudiant"];
+}
+
+?>
 <?php include 'includes/header.php' ?>
 <div class="container_stage">
 	<div class="box_menu_accordeon">
@@ -5,12 +19,10 @@
 	</div>
 	<div class="contenue_stage_acc">
 		<div class="titre_principal">
-			<?php// $nom_etudiant = $_GET['etudiant'];
-					//$classe_etudiant = $_GET['classe'];
-					//echo($nom_etudiant);
-					//echo($classe_etudiant);
+			<?php
+					echo($nom); ?> - <?php
+					echo($classe);
 			?>
-			Sugoi
 		</div>
 		<br>
 		<br>
@@ -19,7 +31,8 @@
 			Informations de l'entreprise
 		</div>
 		<div class="form_entreprise_update">
-			<form method="post" action="traitement_informations_entreprise.php">
+			<form method="post" action="traitement_ajout_stage.php">
+			<input type="hidden" name="nom_etudiant" value="<?php echo $nom ?>">
 				<div class="left_content_entreprise">
 				<?php
 						$query00 = $con->prepare('SELECT nom_entreprise FROM entreprise');
@@ -41,6 +54,7 @@
 				?>
 				<label class="label_visite_form">Référent pédagogique :</label>
 				<select name="referent_pedagogique">
+				<option value="">Autre</option>
 						<?php while ( $results = $query01->fetch()){ ?>
 						<option value="<?php echo ($results['nom_referent_peda']); ?>" >
 							<?php echo($results ['nom_referent_peda']); ?>
@@ -50,39 +64,28 @@
 				<br>
 				<br>
 				<?php
-						$query02 = $con->prepare('SELECT nom_referent_peda FROM referent_pedagogique');
+						$query02 = $con->prepare('SELECT nom_referent_pro FROM referent_professionnel');
 						$query02->execute();
 				?>
 				<label class="label_visite_form">Référent professionnel :</label>
 				<select name="referent_pro">
+				<option value="">Autre</option>
 						<?php while ( $results = $query02->fetch()){ ?>
-						<option value="<?php echo ($results['nom_referent_peda']); ?>" >
-							<?php echo($results ['nom_referent_peda']); ?>
+						<option value="<?php echo ($results['nom_referent_pro']); ?>" >
+							<?php echo($results ['nom_referent_pro']); ?>
 							<?php } $query02->closeCursor(); ?>
 						</option> 
 				</select>
 				<br>
 				<br>
-				<?php
-						$query03 = $con->prepare('SELECT nom_techno FROM techno');
-						$query03->execute();
-				?>
-				<label class="label_visite_form">Technologie utilisée :</label>
-				<select name="techno">
-						<?php while ( $results = $query03->fetch()){ ?>
-						<option value="<?php echo ($results['nom_techno']); ?>" >
-							<?php echo($results ['nom_techno']); ?>
-							<?php } $query03->closeCursor(); ?>
-						</option> 
-				</select>
-				<br>
-				<br>
+			
 				<?php
 						$query04 = $con->prepare('SELECT annee FROM annee');
 						$query04->execute();
 				?>
 				<label class="label_visite_form">Année concernée :</label>
 				<select name="annee">
+				<option value="">Autre</option>
 						<?php while ( $results = $query04->fetch()){ ?>
 						<option value="<?php echo ($results['annee']); ?>" >
 							<?php echo($results ['annee']); ?>
@@ -91,30 +94,31 @@
 				</select>
 				<br>
 				<br>
-				<label class="label_visite_form">Date de début (JJ/MM/AAAA) :</label>
-				<input type="text" name="tel_entreprise" class="input_visite_form">
+				<label class="label_visite_form">Date début (JJ/MM/AAAA) :</label>
+				<input type="date" name="date_debut" class="input_visite_form">
+				<input type="hidden" name="nom_eleve" class="input_visite_form" value="$nom_etudiant">
+				<br>
+				<br>
+				<div class="submit"><input type="submit" value="   Valider   "></div>
 				</div>
 				<div class="right_content_entreprise">
-					<label class="label_nouveau">Ou nouveau :</label>
-					<input type="text" name="nouveau_type_entreprise" class="input_visite_form">
+					
 					<br>
 					<br>
 					<label class="label_nouveau">Ou nouveau :</label>
-					<input type="text" name="nouveau_type_entreprise" class="input_visite_form">
+					<input type="text" name="nouveau_referent_peda" class="input_visite_form">
 					<br>
 					<br>
 					<label class="label_nouveau">Ou nouveau :</label>
-					<input type="text" name="nouveau_type_entreprise" class="input_visite_form">
+					<input type="text" name="nouveau_referent_pro" class="input_visite_form">
 					<br>
 					<br>
-					<label class="label_nouveau">Ou nouveau :</label>
-					<input type="text" name="nouveau_type_entreprise" class="input_visite_form">
-					<br>
-					<br>
+					<label class="label_nouveau">Ou nouvelle :</label>
+					<input type="text" name="nouvelle_annee" class="input_visite_form">
 					<br>
 					<br>
 					<label class="label_visite_form">Date de fin (JJ/MM/AAAA) :</label>
-					<input type="text" name="tel_entreprise" class="input_visite_form">
+					<input type="date" name="date_fin" class="input_visite_form">
 				</div>
 			</form>
 		</div>

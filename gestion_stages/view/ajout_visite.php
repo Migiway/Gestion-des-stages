@@ -3,10 +3,6 @@ $nom = $_GET['etudiant'];
 $classe = $_GET['classe'];
 $stage = $_GET['stage'];
 $ref_peda = $_GET['ref_peda'];
-var_dump($_GET['classe']);
-var_dump($_GET['etudiant']);
-var_dump($stage);
-var_dump($ref_peda);
 ?>
 <?php include 'includes/header.php' ?>
 <div class="container_stage">

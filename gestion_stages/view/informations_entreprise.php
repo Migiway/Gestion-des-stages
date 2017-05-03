@@ -16,10 +16,10 @@
 		<br>
 		<br>
 		<p>
-			Cette société totalise <?php $query00 = $con->prepare('SELECT nb_stages_entreprise FROM entreprise WHERE Nom_entreprise = "'.$nom_entreprise.'"');
+			Cette société totalise <?php $query00 = $con->prepare('SELECT COUNT(Id_entreprise) as nb FROM `stage` WHERE Id_entreprise = "'.$id_entreprise.'" ');
 				$query00->execute();
 				$results = $query00->fetch();
-				$nb_stage = $results['nb_stages_entreprise'];
+				$nb_stage = $results['nb'];
 				echo $nb_stage;
 				/* SELECT Id_entreprise FROM `entreprise` WHERE Nom_entreprise = "'.$Nom_entreprise.'"
 				SELECT COUNT(Id_entreprise)as nb_stage FROM `stage` WHERE Id_entreprise = "'.$id_entreprise.'" */
@@ -44,12 +44,12 @@
 						$type_entreprise = $results['type_entreprise'];
 						$resp_technique = $results['Nom_ref_pro'];
 					?>
-					<label class="label_visite_form">Non de l'entreprise :</label>
+					<label class="label_visite_form">Nom de l'entreprise :</label>
 					<input type="text" name="nom_entreprise" class="input_visite_form" value="<?php echo $nom_entreprise ?>">
 					<br>
 					<br>
 					<?php
-						$query = $con->prepare('SELECT type_entreprise FROM entreprise');
+						$query = $con->prepare('SELECT type_entreprise FROM entreprise Group by type_entreprise');
 						$query->execute();
 					?>
 					<label class="label_visite_form">Type d'entreprise :</label>
@@ -114,39 +114,24 @@
 		<br>
 		<br>
 		<div class="tableau_histo_stage">
+			<?php $requete= $con->query('SELECT Annee, Nom_etudiant,Nom_entreprise, Nom_referent_peda, Nom_referent_pro FROM etudiant AS f, annee AS a, entreprise AS b, referent_pedagogique AS c, referent_professionnel AS d, stage AS e where a.Id_annee = e.Id_annee and b.Id_entreprise = e.Id_entreprise and c.Id_referent_peda = e.Id_referent_peda and d.Id_referent_pro = e.Id_referent_pro and f.Id_etudiant = e.Id_etudiant and Nom_entreprise ="'.$nom_entreprise.'" ORDER BY Nom_entreprise') ?>
 			<TABLE BORDER CELLPADDING=10 CELLSPACING=0>
 				<TR>
 					<TH>Année</TH>
 					<TH>Elève</TH>
 					<TH>Référent<br>pédagogique</TH>
 					<TH>Référent<br>professionnel</TH>
-					<TH>Action</TH>
 				</TR>
+				<?php  while($donnees=$requete->fetch())
+				 { ?>
 				<TR>
-					<TD>2016/2017</TD>
-				    	<TD>Dupont Adrien</TD>
-				    	<TD>M.Ammar</TD>
-				    	<TH>M.Salesse</TH>
-				    	<TH><a href="#" class="lien_tableau">Voir détail</a></TH>
+						<TD><?php echo($donnees['Annee']); ?></TD>
+				    	<TD><?php echo($donnees['Nom_etudiant']); ?></TD>
+				    	<TD><?php echo($donnees['Nom_referent_peda']); ?></TD>
+				    	<TH><?php echo($donnees['Nom_referent_pro']); ?></TH>
 				</TR>
-				<TR>
-					<TD>2015/2016</TD>
-				    	<TD>Dupuis Bernars</TD>
-				    	<TD>M.Ammar</TD>
-				    	<TH>M.Ammar</TH>
-				    	<TH><a href="#" class="lien_tableau">Voir détail</a></TH>
-				</TR>
+				<?php } ?>
 			</TABLE>
-		</div>
-		<div class="page_select">
-			<ul class="page_selector">
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a href="#">2</a>
-				</li>
-			</ul>
 		</div>
 	</div>
 </div>

@@ -31,10 +31,10 @@
 					<br>
 					<br>
 					<label class="label_eleve_form">Téléphone :</label>
-					<input type="number" name="telephone" class="input_eleve_form">
+					<input type="text" name="telephone" class="input_eleve_form">
 					<br>
 					<br>
-					<label class="label_eleve_form">Adresse postale :</label>
+					<label class="label_eleve_form">Adresse :</label>
 					<input type="textarea" name='adresse' rows="8" cols="50" class="input_eleve_form_adresse">
 				</div>
 

@@ -21,12 +21,12 @@ var_dump($classe)
 				<form method="post" action="classe_nouvelle_annee_traitement.php">
 				<label class=form_mini_label_left>Année :</label>
 				<select name="Annee">
+				<option value="">Autre</option>
 						<?php  while($donnees=$requete->fetch()) { ?>
 				           <option value="<?php echo ($donnees['Annee']); ?>">
 				           	<?php echo($donnees['Annee']); ?>
 				           </option>
 				           <?php } ?>
-							<option value="">Autre</option>
 				</select>
 				<label class=form_mini_label_right>ou nouvelle :</label>
 				<input name=new type="textarea" rows="8" cols="50">

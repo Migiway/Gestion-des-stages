@@ -1,10 +1,17 @@
 <?php
-$nom = $_GET['etudiant'];
-$classe = $_GET['classe'];
-var_dump($_GET['classe']);
-var_dump($_GET['etudiant']);
-?>
+if(isset($_GET['etudiant'])&&(isset($_GET['classe']))) 
+{
+	$nom = $_GET['etudiant'];
+    $classe = $_GET['classe'];
+}
+else 
+{
+	session_start();
+	$nom = $_SESSION["nom_etudiant"];
+	$classe = $_SESSION["classe_etudiant"];
+}
 
+?>
 <?php include 'includes/header.php' ?>
 <div class="container_stage">
 	<div class="box_menu_accordeon">
@@ -55,17 +62,6 @@ var_dump($_GET['etudiant']);
 				</TR>
 				<?php } ?>
 			</TABLE>
-			</div>
-			<div class="page_select">
-				<form method="get" action="detail_stage.php">
-				<ul class="page_selector">
-					<li>
-						<a href="#">1</a>
-					</li>
-					<li>
-						<a href="#">2</a>
-					</li>
-				</ul>
 			</div>
 		</div>			
 </div>
