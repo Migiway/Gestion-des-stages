@@ -20,7 +20,7 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 <body>
 	<div class="banner">
 			<div class="logo">
-			<img src="../public/img/logo_sv.png" alt="Logo Lycée Saint Vincent">
+			<a href="../view/accueil.php"><img src="../public/img/logo_sv.png" alt="Logo Lycée Saint Vincent"></a>
 			</div>
 
 			<div class="nav">
@@ -32,13 +32,13 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 					<div class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="#">Stages</a>
+								<a href="../view/stage.php">Stages</a>
 							</li>
 							<li>
-								<a href="#">Entreprises</a>
+								<a href="../view/Entreprises.php">Entreprises</a>
 							</li>
 							<li>
-								<a href="#">Suivi scolarité</a>
+								<a href="../view/suivi_scolarite.php">Suivi scolarité</a>
 							</li>
 						</ul>
 					</div>
@@ -46,10 +46,11 @@ $con = new PDO('mysql:host=localhost;dbname=gestion_stage', $user, $pass);;
 						<ul class="user_menu">
 							<li>
 								<a href="#">Bienvenue <?php
-									if (isset($_COOKIE['login']))
+									if(isset($_COOKIE['login']))
 									{
 										echo $_COOKIE['login'];
 									}
+									
 									?>
      							</a>
 							</li>
